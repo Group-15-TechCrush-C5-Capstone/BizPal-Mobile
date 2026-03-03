@@ -2,6 +2,7 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Image, StyleSheet, TextInput, View } from "react-native";
 const profilepic = require("../../assets/images/prof.png");
+
 const Header = () => {
   return (
     <View

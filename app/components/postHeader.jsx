@@ -31,6 +31,7 @@ const PostHeader = ({
     </View>
   );
 };
+
 export const postStyles = StyleSheet.create({
   head: {
     fontSize: 18,
@@ -65,7 +66,8 @@ export const postStyles = StyleSheet.create({
   dot: {
     marginHorizontal: 4,
     fontWeight: "700",
-    color: "grey"
+    fontSize: 20,
+    color: "grey",
   },
   body: {
     marginRight: "30",

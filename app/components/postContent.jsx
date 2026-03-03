@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
-import Picture from "./picture";
+
 
 
 
@@ -13,12 +13,11 @@ const PostContent = ({children, numberOfLines, body}) => {
           <Text style={contentStyles.body} numberOfLines={numberOfLines}>
             
             {body}
-            
           </Text>
             {children}
           <View >
             
-<Picture source={require("../../assets/images/facebook.png")} style={{height: 200, width: 300}} />
+
 </View>
 
         </View>

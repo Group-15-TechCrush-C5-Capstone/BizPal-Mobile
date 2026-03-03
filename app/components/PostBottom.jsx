@@ -10,19 +10,19 @@ const postBottom = () => {
         
         <View style={postStyles.postBottom}>
             <Pressable style={postStyles.pAction}>
-        <AntDesign name="like" size={24} color="black" />
+        <AntDesign name="like" size={20} color="black" />
         <Text>Like</Text>
           </Pressable>
           <Pressable style={postStyles.pAction}>
-       <MaterialCommunityIcons name="comment-text-outline" size={22} color="black" />
+       <MaterialCommunityIcons name="comment-text-outline" size={20} color="black" />
         <Text>Comment</Text>
           </Pressable>
           <Pressable style={postStyles.pAction}>
-        <FontAwesome6 name="retweet" size={24} color="black" />
+        <FontAwesome6 name="retweet" size={20} color="black" />
         <Text>Repost</Text>
           </Pressable>
           <Pressable style={postStyles.pAction}>
-        <FontAwesome name="send" size={22} color="black" />
+        <FontAwesome name="send" size={20} color="black" />
         <Text>Send</Text>
           </Pressable>
         </View>
@@ -73,6 +73,7 @@ export const postStyles = StyleSheet.create({
 
   pAction:{
     alignItems: "center"
+    
 
   },
 
