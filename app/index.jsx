@@ -1,19 +1,56 @@
-import { StyleSheet } from 'react-native'
-import { WebView } from 'react-native-webview';
+import { StyleSheet, ActivityIndicator } from 'react-native'
+import { WebView } from 'react-native-webview'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { StatusBar } from 'expo-status-bar'
+import { View } from 'react-native'
 
-const index = () => {
+const Index = () => {
+
+  // Activity indicator (loading indicator)
+
+  const loadingIndicator = ()=> (
+    <View style={styles.indicatorContainer}>
+      <ActivityIndicator color='#fff' size='large' style={styles.activityIndicator} />
+    </View>
+  );
+
   return (
     <SafeAreaView style={styles.mainview}>
-      <WebView source={{ uri: 'https://expressmoney.com.ng/?login' }} />
+      <StatusBar style="light"/>
+      <WebView style={styles.webview} 
+      source={{ uri: 'https://bizpal.cmngsn.com/'}}
+      renderLoading={loadingIndicator} 
+      startInLoadingState={true} />
     </SafeAreaView>
   )
 }
 
-export default index
+export default Index
 
 const styles = StyleSheet.create({
-  mainview:{
-    flex: 1
+
+  indicatorContainer: {
+    backgroundColor: '#0B172A',
+    flex:1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 1,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+  },
+
+  activityIndicator:{
+    
+  },
+
+  mainview: {
+    flex: 1,
+    backgroundColor: "#0B172A"
+  },
+  webview:{
+    flex: 1,
   }
 })
