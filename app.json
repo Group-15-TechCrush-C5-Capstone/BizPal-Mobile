@@ -20,7 +20,7 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.anonymous.bizpal"
+      "package": "com.bizpal.app"
     },
     "web": {
       "output": "static",
