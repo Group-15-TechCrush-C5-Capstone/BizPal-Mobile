@@ -1,4 +1,4 @@
-import { StyleSheet, ActivityIndicator } from 'react-native'
+import { StyleSheet, ActivityIndicator, Text } from 'react-native'
 import { WebView } from 'react-native-webview'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
@@ -20,7 +20,12 @@ const Index = () => {
       <WebView style={styles.webview} 
       source={{ uri: 'https://bizpal.cmngsn.com/'}}
       renderLoading={loadingIndicator} 
-      startInLoadingState={true} />
+      startInLoadingState={true} 
+      onError={(syntheticEvent) => {
+      const { nativeEvent } = syntheticEvent;
+      console.warn('WebView error: ', nativeEvent);
+  }}
+  renderError={() => <View><Text>Check your internet connection!</Text></View>}/>
     </SafeAreaView>
   )
 }
