@@ -1,50 +1,69 @@
-# Welcome to your Expo app 👋
+# BizPal Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**BizPal** is a professional mobile shell built with **React Native** and **Expo**. It provides a high-performance WebView experience, integrating the BizPal web ecosystem into a native Android application with advanced navigation and loading features.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Key Features
 
-   ```bash
-   npm install
-   ```
+* **Smart Navigation Memory:** Integrated hardware back-button handling that navigates through WebView history instead of closing the app.
+* **Branded Exit Confirmation:** A custom themed modal that prevents accidental app closures.
+* **Dual Loading Feedback:** Real-time horizontal progress bar combined with standard activity indicators.
+* **Pull-to-Refresh:** Native gesture support to reload web content.
+* **Resilient Error Handling:** Custom "Connection Error" and "Invalid URL" screens with a built-in **Retry** mechanism.
+* **Professional Branding:** Consistent use of corporate colors and typography across all native components.
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 🛠 Tech Stack
 
-In the output, you'll find options to open the app in a
+* **Framework:** React Native / Expo
+* **Core Component:** `react-native-webview`
+* **UI/UX:** `react-native-safe-area-context` & `expo-status-bar`
+* **Build Tool:** EAS (Expo Application Services)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 📦 Getting Started
 
-## Get a fresh project
+### 1. Prerequisites
+Ensure you have the following installed on your machine:
+* **Node.js** (LTS version recommended)
+* **EAS CLI**: `npm install -g eas-cli`
 
-When you're ready, run:
-
+### 2. Installation
+Clone the repository and install the dependencies:
 ```bash
-npm run reset-project
-```
+git clone [repository-url]
+cd bizpal-mobile
+npm install
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+3. Development
+To start the development server:
 
-## Learn more
+Bash
+npx expo start
+🏗 Build & Deployment
+This project uses EAS (Expo Application Services) for cloud builds.
 
-To learn more about developing your project with Expo, look at the following resources:
+Generate a Preview Build (Android)
+Used for testing the app on physical devices before production:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Bash
+eas build --platform android --profile preview
+Generate a Development Build
+Used for active debugging with native modules:
 
-## Join the community
+Bash
+eas build --platform android --profile development
+📂 Project Structure (Technical Notes)
+index.jsx: The main entry point containing the WebView logic, BackHandler listeners, and state management for loading/errors.
 
-Join our community of developers creating universal apps.
+/components/CustomModal.jsx: A reusable, themed modal component used for exit confirmations.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+/theme/index.js: Centralized configuration for Colors and Typography to ensure brand consistency.
+
+👥 Contributors
+TechCrush Capstone Group 15 Members
+
+Group 15 Development Team
