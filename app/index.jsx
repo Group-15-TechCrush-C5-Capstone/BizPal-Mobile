@@ -110,7 +110,7 @@ useEffect(() => {
           <WebView
             ref={webViewRef}
             style={styles.webview}
-            source={{ uri: 'https://google.com' }}
+            source={{ uri: 'https://m.facebook.com/reg' }}
             onNavigationStateChange={(navState) => setCanGoBack(navState.canGoBack)}
             
             
