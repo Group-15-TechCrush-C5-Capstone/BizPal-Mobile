@@ -13,6 +13,7 @@ const Index = () => {
   const [isNavigating, setIsNavigating] = useState(false);
   const [errorDetails, setErrorDetails] = useState({ status: false, message: "" });
   const [canGoBack, setCanGoBack] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
   const webViewRef = useRef(null);
   const showExitModalRef = useRef(false);
 
@@ -91,7 +92,7 @@ useEffect(() => {
       </View>
     ) : (
       <View style={{ flex: 1 }}>
-        {/* PROGRESS BAR UI */}
+       
         {progress < 1 && (
           <View style={[styles.progressBar, { width: `${progress * 100}%` }]} />
         )}
@@ -102,15 +103,25 @@ useEffect(() => {
             <RefreshControl
               refreshing={refreshing}
               onRefresh={onRefresh}
-              colors={[Colors.accent]}
-              progressBackgroundColor={Colors.secondary}
+              colors={[Colors.warning]}
+              progressBackgroundColor={Colors.primary}
+              enabled={isAtTop}
             />
           }
         >
           <WebView
             ref={webViewRef}
             style={styles.webview}
-            source={{ uri: 'https://m.facebook.com/reg' }}
+            source={{ uri: 'https://bizpal.vercel.app' }}
+
+   
+  onScroll={(event) => {
+    const scrollY = event.nativeEvent.contentOffset.y;
+    // Only allow pull-to-refresh if the user is at the absolute top
+    setIsAtTop(scrollY <= 0);
+  }}
+  // ... other props
+
             onNavigationStateChange={(navState) => setCanGoBack(navState.canGoBack)}
             
             
