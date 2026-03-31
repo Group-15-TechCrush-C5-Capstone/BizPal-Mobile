@@ -38,16 +38,16 @@ export default function Onboarding() {
   const flatListRef = useRef(null);
   const router = useRouter();
 
+  
   const finishOnboarding = async () => {
     try {
+      
       await AsyncStorage.setItem("onboardingSeen", "true");
+      
      
-      const check = await AsyncStorage.getItem("onboardingSeen");
-      if (check === "true") {
-        router.replace("/"); 
-      }
+      router.replace("/login"); 
     } catch (e) {
-      console.error(e);
+      console.error("Save error:", e);
     }
   };
 
@@ -60,16 +60,18 @@ const getItemLayout = (_, index) => ({
 });
 
 const handleNext = () => {
-  if (currentIndex < slides.length - 1) {
-    
-    flatListRef.current?.scrollToIndex({ 
-      index: currentIndex + 1, 
-      animated: true 
-    });
-  } else {
-    finishOnboarding();
-  }
-};
+    if (currentIndex < slides.length - 1) {
+      flatListRef.current?.scrollToIndex({ 
+        index: currentIndex + 1, 
+        animated: true 
+      });
+    } else {
+      finishOnboarding(); 
+    }
+  };
+
+
+
 
 
   
@@ -146,14 +148,14 @@ const styles = StyleSheet.create({
   title: { 
     fontFamily: Typography.bold,
     fontSize: 24, 
-    color: Colors.textMain, 
+    color: Colors.background, 
     marginBottom: 10, 
     textAlign: "center" },
 
   description: { 
     fontFamily: Typography.regular,
     fontSize: 16, 
-    color: Colors.textMuted, 
+    color: Colors.surface, 
     textAlign: "center" },
 
   footer: { 
@@ -173,13 +175,13 @@ const styles = StyleSheet.create({
 
   button: { 
     
-    backgroundColor: Colors.warning, 
+    backgroundColor: Colors.accent, 
     padding: 15, 
     borderRadius: 10, 
     alignItems: "center" },
 
   buttonText: { 
-    color: Colors.textMain, 
+    color: Colors.background, 
     fontWeight: "bold", 
     fontSize: 16 },
 });

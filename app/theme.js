@@ -1,21 +1,43 @@
 export const Colors = {
+  // Brand 
+  primary: '#1E3A5F',      
+  secondary: '#112240',    // Darker Navy
+  accent: '#C89B3C',       // Gold
+  
+  // Functional
+  success: '#1A7A4A',      // Green
+  danger: '#C0392B',       // Red
+  info: '#4A90D9',         // Sky Blue
+  
+  // Neutral 
+  background: '#FFFFFF',   // Pure White
+  surface: '#F2F4F8',      // Light Gray
+  border: '#D4DCE8',       // Muted Blue-Gray
+  textMain: '#112240',     // Navy Text
+  textMuted: '#2A6070',    // Teal-Gray
 
-  primary: "#112240",     // Dark Blue (Main Background)
-  secondary: "#1E3A5F",  // Muted Blue (Cards/Elements)
-  accent: "#4A90D9",     // Bright Blue (Primary Buttons)
-  success: "#1A7A4A",    // Green (Success Messages)
-  error: "#C0392B",      // Red (Error Messages)
-  warning: "#C89B3C",    // Gold/Yellow
-  textMain: "#FFFFFF",   // White
-  textMuted: "#D4DCE8",  // Light Grey-Blue
-  backgroundLight: "#F2F4F8", // Off-white for light sections
-}
+  placeholder: '#9CA3AF', // Standard grayish placeholder
+  pickerText: '#1F2937',    // Deep gray/black for readability
+  snackError: '#EF4444',    // Soft red for bottom sheet errors
+  snackSuccess: '#10B981',  // Emerald green for success
 
-export default Colors;
-
-export const Typography = {
-  regular: "Poppins-Regular",
-  semiBold: "Poppins-SemiBold",
-  bold: "Poppins-Bold",
+  error: '#EF4444',
+  errorLight: '#FEE2E2',
+  logoutBase: '#6B7280',
 };
 
+export const Spacing = {
+  xs: 4,
+  s: 8,
+  m: 16,
+  l: 24,
+  xl: 32,
+};
+
+export const Typography = {
+  regular: "Poppins_Regular", 
+  semiBold: "Poppins_SemiBold",
+  bold: "Poppins_Bold",
+};
+
+export default { Colors, Spacing, Typography };
